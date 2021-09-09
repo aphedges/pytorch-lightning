@@ -1176,6 +1176,9 @@ class Trainer(
             stage = self.state.stage
             self.sanity_checking = True
 
+            # reset validation metrics
+            self.logger_connector.reset()
+
             self.call_hook("on_sanity_check_start")
 
             # reload dataloaders
